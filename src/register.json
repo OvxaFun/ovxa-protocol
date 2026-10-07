@@ -1,0 +1,13 @@
+{
+  "_note": "One record per external fact. state is stated, absent or unconfirmed. recordedAt stays internal and is never rendered.",
+  "records": {
+    "name":     { "state": "stated", "value": "Ovxa", "source": "client statement", "recordedAt": "2026-10-07" },
+    "domain":   { "state": "stated", "value": "ovxa.fun", "source": "client statement", "recordedAt": "2026-10-07" },
+    "chain":    { "state": "stated", "value": "Solana mainnet", "source": "client statement", "recordedAt": "2026-10-07" },
+    "rpc":      { "state": "stated", "value": "https://solana-rpc.publicnode.com", "source": "client statement", "recordedAt": "2026-10-07" },
+    "tvlSlug":  { "state": "stated", "value": "solana", "source": "client statement", "recordedAt": "2026-10-07" },
+    "contract": { "state": "absent", "value": null, "source": "client statement", "recordedAt": "2026-10-07" },
+    "x":        { "state": "absent", "url": null, "source": "client statement", "recordedAt": "2026-10-07" },
+    "github":   { "state": "absent", "url": null, "source": "client statement", "recordedAt": "2026-10-07" }
+  }
+}

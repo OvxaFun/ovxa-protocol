@@ -1,0 +1,17 @@
+{
+  "name": "ovxa",
+  "version": "0.1.0",
+  "description": "Ovxa, a protocol on Solana. Static site built to dist/.",
+  "scripts": {
+    "assets": "node tools/prep-assets.mjs",
+    "build": "node tools/build.mjs",
+    "gates": "node tools/gates.mjs"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  },
+  "private": true
+}

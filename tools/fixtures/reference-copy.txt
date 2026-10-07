@@ -1,0 +1,312 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ Ore · memecoins paired with commodities 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ore « 
+ 
+ Home 
+ Coins 
+ Markets 
+ Launch 
+ Treasury 
+ How it works 
+ 
+ Connecting… 
+ ore on X 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Launch 
+ Connect wallet 
+ 
+ 
+ 
+ 
+ Home Markets Coins Launch Docs 
+ 
+ Home Markets Coins Launch How it works Treasury Register a coin X @useorefun 
+ Ore launches memecoins on pump.fun paired with commodity markets. Coins trade with real SOL, signed in your own wallet. Commodity prices are live quotes of tracking funds or listed stand-ins. Holding a coin gives you no claim on any commodity. Memecoins are extremely high risk and most go to zero. Nothing here is financial advice. 
+ Treasury wallet: 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+#05070b
+width=device-width, initial-scale=1, viewport-fit=cover
+@useorefun
+https://useore.fun/
+Launch memecoins on pump.fun paired with oil, gold, eggs, coffee and 16 more commodity markets. Live prices beside every coin.
+Sidebar
+Ore home
+Collapse sidebar
+Main
+Price feed status
+Ore home
+Search coins, or type a commodity
+Search coins or commodities
+Ore on X
+Main
+WTI crude oil
+Weather, storage, LNG exports
+SPDR Gold Shares
+iShares Silver Trust
+Russia, petrol cars vs EVs
+Global X Lithium & Battery Tech ETF
+Black Sea exports, drought
+Bird flu, flock sizes, breakfast
+iShares Global Timber & Forestry ETF
+Hershey (largest US cocoa buyer)
+West Africa harvest, chocolate prices
+Producer stocks
+Live prices · 
+Wallet error
+to the Ore treasury, locked
+curve fills, moves to PumpSwap
+Biggest move
+Type a commodity, like oil or eggs
+Not a listed market
+Coffee Squeeze
+the Ore treasury wallet
+Fees claimed
+Address copied
+Wallet module failed to load. Reload the page.
+String(t??"").replace(/[&
+Math.abs(m)
+0)/4294967296;for(let d=0;d
+Day range
+Quoted through
+Paired with
+Market cap
+Curve / pool
+Launched
+migrated
+PumpSwap
+20 live markets
+ lookup any commodity 
+Look up ↗
+# Type any commodity to see its live price and every coin paired with it.
+ tail -n 4 launches
+no launches yet
+→ be the first
+Coins launched on Ore
+ total market cap · 
+ graduated
+No coins yet
+The first coin launched on Ore shows up here.
+Launch the first
+Pair any coin with a commodity
+Launch a coin
+See the board
+every buy and sell on pump.fun
+Price feed
+20 markets
+live beside every coin
+Creator fees
+to the Ore treasury, locked at mint
+The pair
+On-chain
+written into the coin's metadata
+Graduation
+curve completes, the coin moves to an open market on PumpSwap
+The board
+All 20 markets, quoted live through the fund or stock that tracks them. Pick one to see its coins or launch the first.
+Launch a coin
+Every coin launched through Ore. When a curve completes, the coin migrates to its own PumpSwap pool and moves to the Migrated tab.
+Launch a coin
+No migrated coins yet
+When a coin fills its curve it moves to its own PumpSwap pool and shows up here.
+':b.length?'
+No match
+Try another ticker or clear the filters.
+No coins launched yet
+Every coin launched through Ore lists here the moment it confirms.
+Launch the first coin
+Day high
+Coins paired
+
+ 
+Today's range
+No range yet. US funds trade 9:30 to 16:00 ET, Monday to Friday.
+
+ 
+
+ 
+Price feed
+
+ 
+
+ 
+
+ 
+Fund or company
+
+ 
+What moves it
+Quoted through a fund of producer stocks, which tracks the commodity's direction more than its exact price.
+
+ 
+Launch ideas
+Copy address
+Market cap
+Market cap in SOL
+Paired with
+Migrated to PumpSwap 
+This coin filled its bonding curve and now trades in its own PumpSwap pool. The market cap here is read from that pool.
+Looking up the pool…
+Trade on pump.fun
+Pool on DexScreener
+Pool on Solscan
+Bonding curve
+When the curve fills, the coin migrates to its own pool on PumpSwap.
+
+ 
+
+ 
+Live chart and trades are on pump.fun. Market cap here refreshes every 45 seconds.
+The pair
+
+ 
+Contract
+
+ 
+pump.fun
+DexScreener
+
+ 
+Creator fees
+Set on-chain when the coin was minted, so they can't be changed.
+
+ 
+Ore treasury
+
+ 
+Launcher receives
+
+ 
+On-chain creator
+Launches are paused right now.
+ Everything else works: coins keep trading on pump.fun and fees keep flowing. Follow 
+@useorefun
+ for when launches reopen.
+Launch a coin
+Pick the market, name the coin and sign one transaction. It mints on pump.fun with the Ore treasury as creator and lists here the moment it confirms.
+The market
+Biggest move right now: 
+
+ 
+
+ 
+Quoted through
+
+ 
+What moves it
+
+ 
+The coin
+
+ 
+
+ 
+
+ 
+optional · 
+
+ 
+Optional. Square PNG or JPG under 1 MB.
+
+ 
+First buy
+
+ 
+
+ 
+
+ 
+Custom amount (SOL)
+Paired with
+Mint and curve setup
+~0.02 SOL
+First buy
+Network fee
+~0.001 SOL
+I understand this mints a real token that trades with real SOL, that memecoins can go to zero, and that 100% of creator fees on this coin go to the Ore treasury, not to me.
+Launches are paused
+Launch coin
+Connect wallet to launch
+How it works
+What it is
+The markets
+Launching
+Treasury
+What it is
+Ore is a front end for launching memecoins on pump.fun, with one rule: every coin is paired with a commodity. The commodity's live price sits beside the coin so the joke is legible without reading a Telegram.
+Ore does not custody funds, hold keys or run its own bonding curve. Every mint, buy and sell is a pump.fun transaction you sign in your own wallet.
+The markets
+There are 20 markets across four sectors. Each is quoted through the US-listed fund that tracks it. Where no fund exists, Ore quotes the closest listed company instead and marks it as a stand-in.
+Funds trade 9:30 to 16:00 ET, Monday to Friday, so prices hold still outside those hours. A pair is written into the coin's metadata at mint (
+pair: COFFEE
+) so it travels with the coin to DexScreener, Solscan and anywhere else. One market can have many coins. A coin has exactly one market.
+Launching
+Name (32 characters), ticker (10), thesis (180) and an optional image.
+A first buy of at least 0.01 SOL goes in the same transaction, because pump.fun only shows new coins once they've had a buy.
+The coin lists on Ore the moment the mint confirms on-chain. If the tab closes first, it lists next time you open the site, or from the 
+register page
+Launching: about 0.02 SOL for the mint and curve setup, plus your first buy and a network fee.
+Trading: pump.fun's standard fee on each trade, part of which is the creator fee.
+Creator fees: 100% go to the Ore treasury. The launcher receives none. This is set on-chain at mint and can't be changed later.
+Treasury
+treasury page
+ shows the unclaimed balance live.
+Memecoins are among the highest-risk assets that exist, and most go to zero. The paired commodity is a label, not a backing: holding a coin gives you no claim on oil, gold or anything else. Anyone can launch a coin with a name similar to another, so check the contract address before you buy.
+Nothing on this site is financial advice.
+ Prices come from public market data and can be delayed or wrong.
+Treasury
+Creator fees from every Ore coin build up on-chain in the treasury wallet's creator vault. They stay there until the treasury wallet claims them.
+Unclaimed creator fees
+In dollars
+Loading the vault balance…
+Connect treasury wallet
+Refresh balance
+Claiming moves the SOL from the on-chain vault into the treasury wallet. Only the treasury wallet can sign it.
+Register a coin
+For a coin that was minted through Ore but didn't get listed, for example because the tab closed. Paste the mint address. It's accepted only if its on-chain creator is the Ore treasury wallet.
+Mint address
+
+ 
+Paired market
+Register coin
+Back to the board
+Starting…
+Keep this tab open. You'll approve one transaction in your wallet.
+Starting…
+The fees moved to the treasury wallet.
+Signature
+Checking the mint on-chain…
+It now shows on the Coins page.
+=1||(n.fillStyle=p,n.fillRect(L*o,F*o,o,o),N(n,L*o,F*o,o,T

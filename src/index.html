@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<title>Ovxa · a protocol on Solana</title>
+<meta name="description" content="Ovxa: a Solana protocol giving each token a cell on a shared grid, tied to one signal. Network readings below.">
+<meta http-equiv="Content-Security-Policy" content="{{csp}}">
+<link rel="canonical" href="https://{{domain}}/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/boot.js"></script>
+<script type="module" src="/js/main.js"></script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<!-- Contract slot: always at the top, always visible, inert until an address is stated -->
+<div class="ca-bar" id="ca" data-state="{{ca_branch}}">
+  <div class="ca-inner">
+    <span class="ca-label">Contract</span>
+    {{ca_body}}
+  </div>
+</div>
+
+<div class="app" id="app">
+  <aside class="side" aria-label="Sections">
+    <div class="sbrand">
+      <a class="brand" href="#top" aria-label="Ovxa, jump upward"><img src="/assets/logo-128.png" width="36" height="36" alt=""><span class="bw">Ovxa</span></a>
+      <button class="collapse" id="collapse" type="button" aria-label="Narrow the rail" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+    </div>
+    <nav class="snav" aria-label="Sections">
+      <a href="#top" data-nav="top"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg><span>Overview</span></a>
+      <a href="#live" data-nav="live"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span>Network</span></a>
+      <a href="#pairs" data-nav="pairs"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span>Pairs</span></a>
+      <a href="#protocol" data-nav="protocol"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg><span>Protocol</span></a>
+      <a href="#roadmap" data-nav="roadmap"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span>Roadmap</span></a>
+    </nav>
+    <div class="sfeed"><span class="pill" data-health="connecting" role="status"><i></i><b>Connecting</b></span></div>
+    <div class="sidefoot"><img src="/assets/logo-64.png" width="30" height="30" alt=""><div><b>Ovxa</b><small>{{domain}}</small></div></div>
+  </aside>
+
+  <div class="mainc">
+    <header class="top">
+      <a class="mbrand" href="#top" aria-label="Ovxa, jump upward"><img src="/assets/logo-64.png" width="32" height="32" alt=""><span>Ovxa</span></a>
+      <div class="top-chain"><span class="k">{{chain}}</span></div>
+      <div class="right">
+        <span class="pill" data-health="connecting" role="status"><i></i><b>Connecting</b></span>
+        <div class="social" aria-label="Social links">
+          {{x_link}}
+          {{github_link}}
+        </div>
+      </div>
+    </header>
+
+    <div class="tape" aria-hidden="true"><div class="track" id="tape"><div class="ti"><b>SLOT</b><span class="num">—</span></div><div class="ti"><b>TVL</b><span class="num">—</span></div><div class="ti"><b>PAIRS</b><span class="num">—</span></div></div></div>
+
+    <main id="main">
+      <section class="hero dark" id="top" data-parallax>
+        <canvas class="matrix" id="matrix" aria-hidden="true"></canvas>
+        <div class="hero-grid px d1" aria-hidden="true"></div>
+        <div class="hero-glow px d2" aria-hidden="true"></div>
+        <img class="hero-mark px d3" src="/assets/logo-512.png" width="512" height="512" alt="" aria-hidden="true">
+        <div class="wrap hero-copy px d0">
+          <p class="eyebrow rv"><i class="dot"></i>Protocol on Solana</p>
+          <h1 class="rv"><span class="h1-big">OVXA</span><span class="h1-sub">A grid for tokens that travel alongside reality.</span></h1>
+          <p class="lede rv">One token, one cell, one signal. Whatever a cell does lands in Solana history for any reader to replay.</p>
+          <div class="ctas rv">
+            <a class="btn solid" href="#live">Watch the network<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn" href="#protocol">The mechanics</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="tiles-sec dark">
+        <div class="wrap">
+          <div class="info-tiles rv-group">
+            <article class="info-tile rv" data-tile="chain"><span class="k">Chain</span><b>{{chain}}</b><small>Single network, no bridges</small></article>
+            <article class="info-tile rv" data-tile="contract"><span class="k">Contract</span><b>{{contract_short}}</b><small>{{contract_note}}</small></article>
+            <article class="info-tile rv" data-tile="rpc"><span class="k">RPC</span><b class="mono-sm">{{rpc_host}}</b><small>Read-only public endpoint</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="light cut-down" id="live" data-parallax data-section>
+        <div class="wrap">
+          <div class="sh rv">
+            <div><p class="k">Network</p><h2>Solana at this very moment</h2><p class="sub">Each number is fetched from open Solana endpoints and renews itself while this window remains in view.</p></div>
+            <span class="pill pill-lg" data-health="connecting" role="status"><i></i><b>Connecting</b></span>
+          </div>
+          <div class="stats rv-group">
+            <div class="stat rv"><span class="k">Current slot</span><b class="num" id="v-slot"><span class="sk sk-w2"></span></b><small id="v-slot-sub">Confirmed commitment</small></div>
+            <div class="stat rv"><span class="k">Total value locked</span><b class="num" id="v-tvl"><span class="sk sk-w2"></span></b><small>Every protocol across Solana</small></div>
+            <div class="stat rv"><span class="k">Pools being tracked</span><b class="num" id="v-pairs"><span class="sk sk-w1"></span></b><small>Solana pairs in view</small></div>
+            <div class="stat rv"><span class="k">Board volume, 24h</span><b class="num" id="v-vol"><span class="sk sk-w2"></span></b><small>Added up over every pool listed</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark cut-up" id="pairs" data-parallax data-section>
+        <div class="wrap">
+          <div class="sh rv"><div><p class="k">Pairs</p><h2>Busiest pools on Solana</h2><p class="sub">A rolling look at pools that saw the heaviest flow during the past day.</p></div></div>
+          <div class="win rv">
+            <div class="wbar"><span class="dots"><i></i><i></i><i></i></span><span class="wpath">ovxa/pairs</span><span class="wmeta live" id="pairs-meta">Syncing</span></div>
+            <div class="toolbar">
+              <div class="tabs" role="tablist" aria-label="Sort pairs">
+                <button type="button" role="tab" aria-selected="true" data-sort="volume">Volume</button>
+                <button type="button" role="tab" aria-selected="false" data-sort="change">Gainers</button>
+                <button type="button" role="tab" aria-selected="false" data-sort="liquidity">Depth</button>
+              </div>
+              <label class="filter"><span class="sr">Filter pairs by symbol</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="filter" type="search" placeholder="Filter by symbol" autocomplete="off" spellcheck="false"></label>
+            </div>
+            <div class="tbl">
+              <table>
+                <thead><tr><th scope="col">Pair</th><th scope="col" class="r">Price</th><th scope="col" class="r">24h</th><th scope="col" class="r">Volume 24h</th><th scope="col" class="r hide-s">Depth</th></tr></thead>
+                <tbody id="board">{{skeleton_rows}}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="light cut-down" id="protocol" data-parallax data-section>
+        <div class="wrap">
+          <div class="sh rv"><div><p class="k">Protocol</p><h2>Three moves, in order</h2><p class="sub">The design is small on purpose. Fewer moving parts means fewer hiding spots for surprises.</p></div></div>
+          <div class="steps rv-group">
+            <article class="step rv"><i>1</i><div><h3>Bind</h3><p>A token claims a single cell and names the signal that cell will follow.</p></div></article>
+            <article class="step rv"><i>2</i><div><h3>Settle</h3><p>Each update arrives inside one Solana transaction, ordered by validators and open to all.</p></div></article>
+            <article class="step rv"><i>3</i><div><h3>Observe</h3><p>Any reader may replay a cell using the ledger alone, no permission needed.</p></div></article>
+          </div>
+          <div class="route rv">
+            <div class="rb"><small>Origin</small><b>Token</b><span>Holds one cell</span></div>
+            <div class="rb"><small>Frame</small><b>Cell</b><span>Tracks one signal</span></div>
+            <div class="rb hot"><small>Feed</small><b>Signal</b><span>Sourced beyond Solana</span></div>
+            <div class="rb"><small>Record</small><b>Ledger</b><span>Final and replayable</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark cut-up" id="principles" data-parallax data-section>
+        <div class="wrap">
+          <div class="sh rv"><div><p class="k">Principles</p><h2>How this page behaves</h2></div></div>
+          <div class="g3 rv-group">
+            <article class="card rv"><h3>Facts need a source</h3><p>A detail appears here once someone has written it down and named where it came from. Until then its slot stays empty.</p></article>
+            <article class="card rv"><h3>Switched off until real</h3><p>Addresses and outbound links stay inert while they are unstated. Nothing points anywhere on a guess.</p></article>
+            <article class="card rv"><h3>Plain machinery</h3><p>Public endpoints, no private backend, no tracking. Your browser network tab shows each request.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="light cut-down" id="roadmap" data-parallax data-section>
+        <div class="wrap">
+          <div class="sh rv"><div><p class="k">Roadmap</p><h2>Where the work goes</h2><p class="sub">Phases are ordered by dependency, not by calendar.</p></div></div>
+          <ol class="phases rv-group">
+            <li class="phase rv"><span class="tag live-tag">In progress</span><h3>Foundation</h3><p>Brand system, public site, live readings and the written design.</p></li>
+            <li class="phase rv"><span class="tag">Planned</span><h3>Open grid</h3><p>Program deployed, first cells claimable, address stated here.</p></li>
+            <li class="phase rv"><span class="tag">Planned</span><h3>Signals</h3><p>Outside feeds attached to cells, each carrying a written trust model.</p></li>
+            <li class="phase rv"><span class="tag">Planned</span><h3>Hand-off</h3><p>Upgrade rights pass over to cell holders, leaving the founding team behind.</p></li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="dark foot">
+      <div class="wrap">
+        <div class="fl"><a href="#top">Overview</a><a href="#live">Network</a><a href="#pairs">Pairs</a><a href="#protocol">Protocol</a><a href="#roadmap">Roadmap</a></div>
+        <p>Ovxa is experimental software. Token values swing hard and may fall to nothing. This page informs, nothing more, and recommends no purchase or sale.</p>
+        <p class="dim">{{domain}}</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<nav class="mnav" aria-label="Sections">
+  <a href="#top" data-nav="top"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg><span>Home</span></a>
+  <a href="#live" data-nav="live"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span>Network</span></a>
+  <a href="#pairs" data-nav="pairs"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span>Pairs</span></a>
+  <a href="#protocol" data-nav="protocol"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg><span>Protocol</span></a>
+  <a href="#roadmap" data-nav="roadmap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span>Roadmap</span></a>
+</nav>
+
+<canvas id="wipe" aria-hidden="true"></canvas>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="application/json" id="register">{{register_json}}</script>
+</body>
+</html>
